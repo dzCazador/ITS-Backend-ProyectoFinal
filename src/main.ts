@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { ValidationPipe,Logger } from '@nestjs/common';
 import {envs} from './configuration'
 import { HttpExceptionFilter } from './common';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -22,6 +23,17 @@ async function bootstrap() {
     }
     )
   )
+
+  //Configuracion de Swagger
+  const config = new DocumentBuilder()
+    .setTitle('API REST Example')
+    .setDescription('API REST documentation')
+    .setVersion('1.0')
+    .addTag('examples')
+    .build();
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api', app, document);
+
   await app.listen(envs.port);
   logger.log(`Server listening on port: ${envs.port}`)
 }

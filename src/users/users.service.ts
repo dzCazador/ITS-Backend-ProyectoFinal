@@ -1,5 +1,5 @@
 import { BadRequestException, Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
-import { CreateUserDto, LoginDto} from './dto';
+import { CreateUserDto, LoginDto,UpdateUserDto} from './dto';
 import { AuthService } from './auth/auth.service';
 import { PrismaService } from '../prisma/prisma.service';
 
@@ -49,18 +49,24 @@ export class UsersService {
     return user
   }
 
-/*
-  findAll() {
-    return `This action returns all users`;
+  async findAll() {
+    const data = await this.prismaService.user.findMany()
+    return data
   }
 
 
 
-  update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+  async update(id: number, UpdateUser: UpdateUserDto) {
+    const user = await this.prismaService.user.findFirst({where: {id}})
+    if (!user) throw new NotFoundException('Usuario Inexistente')
+    const result = await this.prismaService.user.update(
+                              {where:{id},
+                              data: UpdateUser})
+    return result
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
-  }*/
+  async remove(id: number) {
+    const result = await this.prismaService.user.delete({where: {id}})
+    return result
+  }
 }
