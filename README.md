@@ -72,9 +72,12 @@ Con el token de autenticación, podrás realizar las operaciones disponibles seg
 
 ---
 
-### Instrucciones para las imágenes
+### Información adicional
 
+## MER de la base de datos
 ![MER de la Base de Datos](https://github.com/dzCazador/ITS-Backend-ProyectoFinal/blob/main/public/MER_DB.jpeg)
+
+## Documentacion Swagger
 ![Documentacion Swagger](https://github.com/dzCazador/ITS-Backend-ProyectoFinal/blob/main/public/api.PNG)
 ## Tecnologías utilizadas
 
