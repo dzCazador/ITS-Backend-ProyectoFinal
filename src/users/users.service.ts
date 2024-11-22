@@ -11,6 +11,7 @@ export class UsersService {
   ){}
 
 
+  
   async register(createUserDto: CreateUserDto) {
     // Desestructuramos el Objeto
     const {email, password} = createUserDto
@@ -49,10 +50,17 @@ export class UsersService {
     return user
   }
 
-  async findAll() {
-    const data = await this.prismaService.user.findMany()
-    return data
-  }
+/**
+ * Retrieves all users from the database.
+ *
+ * @returns {Promise<User[]>} A promise that resolves to an array of User objects.
+ * Each User object represents a user in the database.
+ *
+ */
+async findAll() {
+  const data = await this.prismaService.user.findMany()
+  return data
+}
 
 
 
@@ -65,8 +73,10 @@ export class UsersService {
     return result
   }
 
+
   async remove(id: number) {
     const result = await this.prismaService.user.delete({where: {id}})
     return result
   }
 }
+

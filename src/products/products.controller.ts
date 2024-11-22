@@ -31,6 +31,16 @@ export class ProductsController {
     response.status(HttpStatus.OK).json({ ok: true, result, msg: 'Producto Encontrado' });
   }
 
+  @Get('/search/:name')
+  @ApiOperation({ summary: 'Get a product by Name' })
+  @ApiParam({ name: 'name', type: 'string', description: 'Product Name ' })
+  @ApiResponse({ status: 200, description: 'The found product.' })
+  @ApiResponse({ status: 404, description: 'Product not found.' })
+  async findByName(@Param('name') name: string, @Res() response: Response) {
+    const result = await this.productsService.findByName(name);
+    response.status(HttpStatus.OK).json({ ok: true, result, msg: 'Producto Encontrado' });
+  }
+
   @Post()
   @Roles('admin', 'superadmin')
   @ApiOperation({ summary: 'Create a new product' })

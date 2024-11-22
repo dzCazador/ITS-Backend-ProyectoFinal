@@ -43,7 +43,20 @@ export class ProductsService {
     return product
   }
 
+
+  async findByName(name: string) {
+    const products = await this.prismaService.product.findMany({
+      where: {
+        name: {
+          startsWith: name
+        },
+      },
+    });
   
+    if (products.length === 0) throw new NotFoundException('Producto Inexistente');
+    return products;
+  }
+
   async create(createProduct: CreateProductDto) {
     // Desestructuramos el Objeto
     const {name} = createProduct
