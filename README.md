@@ -7,7 +7,7 @@ Este es el trabajo práctico final de la materia **Programación Backend** de la
 
 ## Requisitos previos
 
-Asegúrate de tener instalados los siguientes programas antes de comenzar:
+Asegurate de tener instalados los siguientes programas antes de comenzar:
 
 - [Node.js](https://nodejs.org) (versión 16 o superior recomendada)
 - [Git](https://git-scm.com/)
@@ -18,57 +18,57 @@ Asegúrate de tener instalados los siguientes programas antes de comenzar:
 ## Pasos para hacer funcionar la aplicación
 
 1. **Clonar el repositorio**  
-   Ejecuta el siguiente comando en tu terminal para clonar el repositorio en tu máquina local:  
+   Ejecutá el siguiente comando en tu terminal para clonar el repositorio en tu máquina local:  
    ```bash
    git clone https://github.com/dzCazador/ITS-Backend-ProyectoFinal.git
    ```
 
 2. **Instalar las dependencias**  
-   Ingresa al directorio del proyecto y ejecuta:  
+   Ingresá al directorio del proyecto y ejecuta:  
    ```bash
    npm install
    ```
 
 3. **Configurar las variables de entorno**  
-   Crea un archivo `.env` en la raíz del proyecto basándote en el archivo `.env_template`.  
+   Creá un archivo `.env` en la raíz del proyecto basándote en el archivo `.env_template`.  
    Formato del `.env` esperado:  
    ```plaintext
    db_dialect://db_user:db_pass@db_host:db_port/db_name
    ```
-   Asegúrate de reemplazar los valores con la configuración de tu base de datos.
+   Asegurate de reemplazar los valores con la configuración de tu base de datos.
 
 4. **Migrar la base de datos**  
-   Aplica la última versión de las migraciones con el siguiente comando:  
+   Aplicá la última versión de las migraciones con el siguiente comando:  
    ```bash
    npx prisma migrate dev --name <NOMBRE_MIGRACION>
    ```
-   Reemplaza `<NOMBRE_MIGRACION>` con un nombre significativo para la migración.
+   Reemplazá `<NOMBRE_MIGRACION>` con un nombre significativo para la migración.
 
 5. **Iniciar la aplicación**  
-   Ejecuta el siguiente comando para iniciar la aplicación en modo desarrollo:  
+   Ejecutá el siguiente comando para iniciar la aplicación en modo desarrollo:  
    ```bash
    npm run start:dev
    ```
 
 6. **Acceder a la documentación**  
-   Una vez que la aplicación esté en ejecución, abre tu navegador y accede a:  
+   Una vez que la aplicación esté en ejecución, abrí tu navegador y accede a:  
    ```
    http://localhost:3000/api
    ```
-   Aquí encontrarás la documentación interactiva generada con **Swagger**, que describe todas las rutas disponibles.
+   Aca vas a encontrar la documentación interactiva generada con **Swagger**, que describe todas las rutas disponibles.
 
 ---
 
 ## Uso de la aplicación
 
 ### 1. Crear un usuario
-Sigue las instrucciones de la documentación Swagger para enviar una solicitud POST y crear un usuario.
+Segui las instrucciones de la documentación Swagger para enviar una solicitud POST y crear un usuario.
 
 ### 2. Hacer login
-Usa el endpoint correspondiente para autenticarte con las credenciales del usuario creado.
+Utilizá el endpoint correspondiente para autenticarte con las credenciales del usuario creado.
 
 ### 3. Usar las peticiones HTTP
-Con el token de autenticación, podrás realizar las operaciones disponibles según el rol asignado a tu usuario (`user`, `admin`, `superadmin`).
+Con el token de autenticación, podes realizar las operaciones disponibles según el rol asignado a tu usuario.
 
 ---
 
