@@ -1,7 +1,7 @@
 
 # ITS Backend - Proyecto Final
 
-## INTEGRANTES DEL PROYECTO: TESTASEACA CRISTIAN  - CAPORASO MANUEL
+## INTEGRANTES DEL PROYECTO: TESTASECA CRISTIAN  - CAPORASO MANUEL
 
 Este es el trabajo práctico final de la materia **Programación Backend** de la **Tecnicatura en Desarrollo de Software** del **Instituto Técnico Superior Cipolletti**. La aplicación es una API backend que permite realizar diferentes operaciones HTTP y cuenta con un CRUD completo de usuarios y productos. Utiliza buenas prácticas de desarrollo, con un código limpio y ordenado que cumple con los principios de responsabilidad única. Además, implementa autenticación basada en JWT, un manejo adecuado de errores en las peticiones HTTP y una estructura de proyecto correctamente organizada. Todo esto está documentado con Swagger.
 
